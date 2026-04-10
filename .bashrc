@@ -114,8 +114,7 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.local/bin/env"
 
-eval "$(zoxide init bash)"
-alias cd='z'
+eval "$(zoxide init bash --cmd j)"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
