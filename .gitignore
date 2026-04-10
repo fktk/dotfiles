@@ -16,3 +16,4 @@ tags
 *.pem
 id_rsa
 id_ed25519
+nvim/lazy-lock.json
