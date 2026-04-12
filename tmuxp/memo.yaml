@@ -1,0 +1,10 @@
+session_name: memo
+start_directory: /home/tk/projects/memo/memos
+before_script:
+  - obsidian --no-sandbox &
+windows:
+  - window_name: memo
+    layout: main-vertical
+    panes:
+      - yazi
+      - gemini
