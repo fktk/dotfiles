@@ -1,10 +1,10 @@
 session_name: memo
 start_directory: /home/tk/projects/memo/memos
+before_script:
+  - "/usr/bin/env bash -c 'obsidian --no-sandbox & '"
 windows:
   - window_name: memo
     layout: main-vertical
-    shell_command:
-      - obsidian --no-sandbox &
     panes:
       - yazi
       - gemini
