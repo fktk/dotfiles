@@ -4,8 +4,6 @@ windows:
   - window_name: memo
     layout: main-vertical
     panes:
-      - panes:
-          - yazi
-          - obsidian --no-sandbox
-        focus: true
+      - yazi
+      - obsidian --no-sandbox
       - gemini
