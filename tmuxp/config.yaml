@@ -1,0 +1,8 @@
+session_name: dev
+start_directory: ~/.dotfiles
+windows:
+  - window_name: dev
+    layout: main-vertical
+    panes:
+      - yazi
+      - gemini
