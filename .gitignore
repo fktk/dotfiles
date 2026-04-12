@@ -17,3 +17,6 @@ tags
 id_rsa
 id_ed25519
 nvim/lazy-lock.json
+
+# tmux plugins
+tmux/plugins/

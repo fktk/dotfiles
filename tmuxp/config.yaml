@@ -1,7 +1,7 @@
-session_name: dev
+session_name: config
 start_directory: ~/.dotfiles
 windows:
-  - window_name: dev
+  - window_name: config
     layout: main-vertical
     panes:
       - yazi

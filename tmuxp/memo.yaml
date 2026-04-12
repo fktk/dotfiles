@@ -1,10 +1,13 @@
 session_name: memo
 start_directory: /home/tk/projects/memo/memos
 windows:
-  - window_name: memo
-    layout: 1222,238x59,0,0,238
-    panes:
-      - yazi
-      - panes:
-          - obsidian --no-sandbox
-          - gemini
+- focus: 'true'
+  window_name: memo
+  layout: 2f28,231x48,0,0{85x48,0,0[85x34,0,0,19,85x13,0,35,22],145x48,86,0,21}
+  options:
+    automatic-rename: false
+  panes:
+  - yazi
+  - focus: 'true'
+    shell_command: obsidian --no-sandbox
+  - gemini
