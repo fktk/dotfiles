@@ -2,8 +2,9 @@ session_name: memo
 start_directory: /home/tk/projects/memo/memos
 windows:
   - window_name: memo
-    layout: main-vertical
+    layout: 1222,238x59,0,0,238
     panes:
       - yazi
-      - obsidian --no-sandbox
-      - gemini
+      - panes:
+          - obsidian --no-sandbox
+          - gemini
