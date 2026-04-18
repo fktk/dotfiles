@@ -85,6 +85,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias obsidian='obsidian --no-sandbox'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -126,4 +127,8 @@ function y() {
 
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
+fi
+
+if [ -f ~/.bash_wsl ]; then
+    . ~/.bash_wsl
 fi
