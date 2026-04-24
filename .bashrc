@@ -85,7 +85,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias obsidian='obsidian --no-sandbox'
+alias obsidian='/snap/obsidian/current/obsidian'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -132,3 +132,5 @@ fi
 if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
+
+export QMD_EMBED_MODEL="hf:Qwen/Qwen3-Embedding-0.6B-GGUF/Qwen3-Embedding-0.6B-Q8_0.gguf"

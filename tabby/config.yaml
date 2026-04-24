@@ -1,0 +1,74 @@
+# Tab grouping rules (first match wins)
+groups:
+  # - name: "Frontend"
+  #   pattern: "^FE|"
+  #   working_dir: "~/projects/frontend"  # Default dir for new windows
+  #   theme:
+  #     bg: "#e74c3c"
+  #     fg: "#ffffff"
+  #     active_bg: "#c0392b"
+  #     active_fg: "#ffffff"
+  #     icon: ""
+  #
+  # - name: "Backend"
+  #   pattern: "^BE|"
+  #   working_dir: "~/projects/backend"
+  #   theme:
+  #     bg: "#27ae60"
+  #     fg: "#ffffff"
+  #     active_bg: "#1e8449"
+  #     active_fg: "#ffffff"
+  #     icon: ""
+  #
+  - name: "Default"
+    pattern: ".*"
+    theme:
+      bg: "#3498db"
+      fg: "#ffffff"
+      active_bg: "#2980b9"
+      active_fg: "#ffffff"
+
+# Indicators
+indicators:
+  activity:
+    enabled: false
+    icon: "!"
+    color: "#000000"
+  bell:
+    enabled: true
+    icon: "◆"
+    color: "#000000"
+    bg: "#ffff00"  # Yellow background for visibility
+  silence:
+    enabled: true
+    icon: "○"
+    color: "#000000"
+  busy:
+    enabled: true
+    icon: "◐"
+    color: "#ff0000"
+    frames: ["◐", "◓", "◑", "◒"]  # Animation frames
+  input:
+    enabled: true
+    icon: "?"
+    color: "#ffffff"
+    bg: "#9b59b6"  # Purple - needs attention
+    frames: ["?", "?"]  # Can add blinking: ["?", " "]
+
+# Vertical sidebar settings
+sidebar:
+  position: left      # "left" or "right"
+  mode: full          # "full" (full window height) or "partial" (attach to pane)
+  # new_tab_button: true
+  # new_group_button: true
+  show_empty_groups: true
+  close_button: false
+  sort_by: "group"  # "group" or "index"
+  colors:
+    disclosure_fg: "#000000"
+    disclosure_expanded: "⊟"
+    disclosure_collapsed: "⊞"
+    active_indicator: "◀"  # Active window/pane indicator
+    active_indicator_fg: "auto"  # "auto" uses group/window bg color
+
+# terminal_app: Ghostty

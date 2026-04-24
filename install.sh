@@ -8,3 +8,5 @@ ln -sf $DOTFILES_DIR/tmux $HOME/.config
 ln -sf $DOTFILES_DIR/yazi $HOME/.config
 ln -sf $DOTFILES_DIR/lazygit $HOME/.config
 ln -sf $DOTFILES_DIR/.bashrc $HOME/.bashrc
+ln -sf $DOTFILES_DIR/tabby $HOME/.config
+ln -sf $DOTFILES_DIR/ghostty $HOME/.config
