@@ -71,4 +71,10 @@ sidebar:
     active_indicator: "◀"  # Active window/pane indicator
     active_indicator_fg: "auto"  # "auto" uses group/window bg color
 
-# terminal_app: Ghostty
+terminal_app: Ghostty
+
+auto_theme:
+  enabled: true
+  mode: system
+  light: rose-pine-dawn
+  dark: rose-pine
