@@ -1,80 +1,324 @@
-# Tab grouping rules (first match wins)
+position: top
+height: 2
+style:
+    rounded: true
+    separator_left: ""
+    separator_right: ""
+overflow:
+    mode: scroll
+    indicator: ›
 groups:
-  # - name: "Frontend"
-  #   pattern: "^FE|"
-  #   working_dir: "~/projects/frontend"  # Default dir for new windows
-  #   theme:
-  #     bg: "#e74c3c"
-  #     fg: "#ffffff"
-  #     active_bg: "#c0392b"
-  #     active_fg: "#ffffff"
-  #     icon: ""
-  #
-  # - name: "Backend"
-  #   pattern: "^BE|"
-  #   working_dir: "~/projects/backend"
-  #   theme:
-  #     bg: "#27ae60"
-  #     fg: "#ffffff"
-  #     active_bg: "#1e8449"
-  #     active_fg: "#ffffff"
-  #     icon: ""
-  #
-  - name: "Default"
-    pattern: ".*"
-    theme:
-      bg: "#3498db"
-      fg: "#ffffff"
-      active_bg: "#2980b9"
-      active_fg: "#ffffff"
-
-# Indicators
-indicators:
-  activity:
-    enabled: false
-    icon: "!"
-    color: "#000000"
-  bell:
-    enabled: true
-    icon: "◆"
-    color: "#000000"
-    bg: "#ffff00"  # Yellow background for visibility
-  silence:
-    enabled: true
-    icon: "○"
-    color: "#000000"
-  busy:
-    enabled: true
-    icon: "◐"
-    color: "#ff0000"
-    frames: ["◐", "◓", "◑", "◒"]  # Animation frames
-  input:
-    enabled: true
-    icon: "?"
-    color: "#ffffff"
-    bg: "#9b59b6"  # Purple - needs attention
-    frames: ["?", "?"]  # Can add blinking: ["?", " "]
-
-# Vertical sidebar settings
+    - name: Default
+      pattern: .*
+      theme:
+          bg: '#2ecc71'
+      fg: '#ffffff'
+      active_bg: '#2980b9'
+      active_fg: '#ffffff'
+      inactive_bg: ""
+      inactive_fg: ""
+      icon: ""
+      active_indicator_bg: ""
 sidebar:
-  position: left      # "left" or "right"
-  mode: full          # "full" (full window height) or "partial" (attach to pane)
-  # new_tab_button: true
-  # new_group_button: true
-  show_empty_groups: true
-  close_button: false
-  sort_by: "group"  # "group" or "index"
-  colors:
-    disclosure_fg: "#000000"
-    disclosure_expanded: "⊟"
-    disclosure_collapsed: "⊞"
-    active_indicator: "◀"  # Active window/pane indicator
-    active_indicator_fg: "auto"  # "auto" uses group/window bg color
-
-terminal_app: Ghostty
-
+    position: left
+    mode: full
+    header:
+        text: TABBY
+        height: 3
+        padding_bottom: 1
+        centered: null
+        active_color: null
+        fg: ""
+        bg: ""
+        bold: null
+    pane_headers: false
+    new_tab_button: false
+    close_button: false
+    new_group_button: false
+    show_empty_groups: false
+    sort_by: group
+    debug: false
+    line_height: 0
+    action_zone: ""
+    action_priority: 0
+    prefix_mode: false
+    theme: dark
+    theme_mode: ""
+    icon_style: ""
+    colors:
+        bg: ""
+        header_fg: ""
+        active_fg: ""
+        inactive_fg: '#f2f2ee'
+        pane_fg: ""
+        disclosure_fg: '#000000'
+        disclosure_expanded: ⊟
+        disclosure_collapsed: ⊞
+        active_indicator: ◀
+        active_indicator_frames:
+            - ▶
+            - ▶
+            - ▶
+            - ▶
+            - ▶
+            - ' '
+        active_indicator_fg: auto
+        active_indicator_bg: ""
+        tree_fg: ""
+        tree_bg: ""
+        tree_branch: ├─
+        tree_branch_last: └─
+        tree_connector: ─
+        tree_connector_panes: ┬
+        tree_continue: │
+    hide_predefined_colors: false
+    show_ssh_host: false
+pane_header:
+    active_fg: ""
+    active_bg: ""
+    inactive_fg: ""
+    inactive_bg: ""
+    command_fg: ""
+    button_fg: ""
+    divider_fg: ""
+    border_from_tab: false
+    auto_border: false
+    border_lines: heavy
+    border_fg: ""
+    border_bg: ""
+    active_border_fg: ""
+    active_border_bg: ""
+    dim_inactive: false
+    dim_opacity: 0.7
+    custom_border: false
+    handle_color: ""
+    handle_icon: ""
+    draggable: false
+    collapse_expanded_icon: ▾
+    collapse_collapsed_icon: ▸
+    # resize_grow_icon: '>'
+    # resize_shrink_icon: <
+    # resize_horizontal_grow_icon: '>'
+    # resize_horizontal_shrink_icon: <
+    # resize_vertical_grow_icon: ↓
+    # resize_vertical_shrink_icon: ↑
+    resize_separator: ¦
+    terminal_bg: ""
+indicators:
+    activity:
+        enabled: false
+        icon: '!'
+        color: '#000000'
+    bell:
+        enabled: true
+        icon: ◆
+        color: '#000000'
+        bg: '#ffff00'
+    silence:
+        enabled: true
+        icon: ○
+        color: '#000000'
+    last:
+        enabled: false
+        icon: '-'
+        color: '#3498db'
+    busy:
+        enabled: true
+        icon: ◐
+        color: '#ff0000'
+        frames:
+            - ◐
+            - ◓
+            - ◑
+            - ◒
+    input:
+        enabled: true
+        icon: '?'
+        color: '#ffffff'
+        bg: '#9b59b6'
+        frames:
+            - '?'
+            - '?'
+prompt:
+    fg: ""
+    bg: ""
+    bold: false
+    shell_integration: null
+    fallback_icon: ""
+widgets:
+    clock:
+        enabled: true
+        format: "15:04:05"
+        show_date: true
+        date_format: ""
+        fg: ""
+        bg: ""
+        position: bottom
+        pin: false
+        priority: 0
+        divider: '-'
+        divider_bottom: ""
+        divider_fg: ""
+        padding_top: 0
+        padding_bottom: 0
+        margin_top: 0
+        margin_bottom: 0
+    pet:
+        enabled: false
+        name: ""
+        style: ""
+        rows: 0
+        thoughts: false
+        thought_interval: 0
+        thought_speed: 0
+        position: ""
+        pin: false
+        hunger_decay: 0
+        poop_chance: 0
+        action_chance: 0
+        can_die: false
+        debug_bar: false
+        adventure_enabled: false
+        adventure_chance: 0
+        adventure_blood: false
+        adventure_vibe: ""
+        llm_provider: ""
+        llm_model: ""
+        llm_api_key: ""
+        thought_refresh_hours: 0
+        icons:
+            idle: ""
+            walking: ""
+            jumping: ""
+            playing: ""
+            eating: ""
+            sleeping: ""
+            happy: ""
+            hungry: ""
+            yarn: ""
+            food: ""
+            poop: ""
+            thought: ""
+            heart: ""
+            life: ""
+            hunger_icon: ""
+            happy_icon: ""
+            sad_icon: ""
+            ground: ""
+            blood: ""
+        fg: ""
+        bg: ""
+        priority: 0
+        divider: ""
+        divider_bottom: ""
+        divider_fg: ""
+        padding_top: 0
+        padding_bottom: 0
+        margin_top: 0
+        margin_bottom: 0
+    git:
+        enabled: false
+        style: ""
+        show_counts: false
+        show_insertions: false
+        show_stash: false
+        update_interval: 0
+        position: ""
+        pin: false
+        priority: 0
+        fg: ""
+        bg: ""
+        branch_fg: ""
+        clean_fg: ""
+        dirty_fg: ""
+        ahead_fg: ""
+        behind_fg: ""
+        divider: ""
+        divider_fg: ""
+        padding_top: 0
+        padding_bottom: 0
+        margin_top: 0
+        margin_bottom: 0
+    session:
+        enabled: false
+        style: ""
+        show_clients: false
+        show_windows: false
+        position: ""
+        pin: false
+        priority: 0
+        fg: ""
+        bg: ""
+        session_fg: ""
+        divider: ""
+        divider_fg: ""
+        padding_top: 0
+        padding_bottom: 0
+        margin_top: 0
+        margin_bottom: 0
+    stats:
+        enabled: true
+        style: minimal
+        show_cpu: true
+        show_memory: true
+        show_battery: false
+        bar_style: ""
+        bar_width: 0
+        update_interval: 0
+        position: ""
+        pin: false
+        priority: 0
+        fg: ""
+        bg: ""
+        cpu_fg: '#aaaaaa'
+        memory_fg: ""
+        battery_fg: ""
+        divider: ""
+        divider_fg: ""
+        padding_top: 0
+        padding_bottom: 0
+        margin_top: 0
+        margin_bottom: 0
+    claude:
+        enabled: false
+        style: ""
+        show_today: false
+        show_week: false
+        show_month: false
+        show_total: false
+        show_messages: false
+        db_path: ""
+        update_interval: 0
+        position: ""
+        pin: false
+        priority: 0
+        fg: ""
+        bg: ""
+        cost_fg: ""
+        divider: ""
+        divider_fg: ""
+        padding_top: 0
+        padding_bottom: 0
+        margin_top: 0
+        margin_bottom: 0
+busy_detection:
+    extra_idle: []
+    ai_tools:
+        - opencode
+        - gemini
+        - codex
+        - copilot
+    idle_timeout: 10
+terminal_title:
+    enabled: false
+    format: ""
 auto_theme:
-  enabled: true
-  mode: system
-  light: rose-pine-dawn
-  dark: rose-pine
+    enabled: true
+    mode: system
+    light: rose-pine-dawn
+    dark: rose-pine
+    time_light: "08:00"
+    time_dark: "20:00"
+ai:
+    tab_summary:
+        max_words: 3

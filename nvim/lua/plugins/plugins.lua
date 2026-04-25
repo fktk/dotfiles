@@ -6,7 +6,7 @@ return {
     priority = 1000,
     config = function()
       require('everforest').setup({
-        transparent_background_level = 1,
+        transparent_background_level = 1.3,
       })
       require("everforest").load()
     end,
