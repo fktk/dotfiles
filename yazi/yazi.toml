@@ -8,4 +8,4 @@ linemode = "size_and_mtime"
 show_symlink = true
 
 [preview]
-image_layer = "sizel"
+image_preview_method = "kitty"
