@@ -136,3 +136,10 @@ if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
 
+_tabby_ps1() {
+  # プロンプト表示直前に OSC シーケンスを送信
+  printf "\033]1337;TabbyEvent=input\007"
+}
+
+PROMPT_COMMAND="_tabby_ps1; $PROMPT_COMMAND"
+

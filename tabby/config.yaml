@@ -104,7 +104,7 @@ pane_header:
     terminal_bg: ""
 indicators:
     activity:
-        enabled: false
+        enabled: true
         icon: '!'
         color: '#000000'
     bell:
@@ -117,7 +117,7 @@ indicators:
         icon: ○
         color: '#000000'
     last:
-        enabled: false
+        enabled: true
         icon: '-'
         color: '#3498db'
     busy:
