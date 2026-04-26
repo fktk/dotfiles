@@ -12,6 +12,16 @@ return {
     end,
   },
   {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = {
+      filetypes = {"*"},
+      usr_default_options = {
+        mode = "background",
+      },
+    }
+  },
+  {
     "HakonHarnes/img-clip.nvim",
     event = "VeryLazy",
     opts = {

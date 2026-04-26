@@ -1,13 +1,34 @@
-font-size = 11
+font-size = 10
 
-background = 000
 background-opacity = 0.70
+theme = Everforest Dark Hard
 
+resize-overlay = never
 window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true
 
-theme = Everforest Dark Hard
+mouse-hide-while-typing = true
+copy-on-select = true
 
-command-passthrough = true
-fps-limit = 60
+keybind = ctrl+a=text:\x01
+keybind = ctrl+b=text:\x02
+keybind = ctrl+d=text:\x04
+keybind = ctrl+e=text:\x05
+keybind = ctrl+f=text:\x06
+keybind = ctrl+h=text:\x08
+keybind = ctrl+i=text:\x09
+keybind = ctrl+j=text:\x0a
+keybind = ctrl+k=text:\x0b
+keybind = ctrl+n=text:\x0e
+keybind = ctrl+p=text:\x10
+keybind = ctrl+r=text:\x12
+keybind = ctrl+t=text:\x14
+keybind = ctrl+u=text:\x15
+keybind = ctrl+w=text:\x17
+keybind = ctrl+y=text:\x19
+keybind = ctrl+[=text:\x1b
+keybind = ctrl+]=text:\x1d
+keybind = ctrl+m=text:\x0d
+
+keybind = ctrl+shift+m=toggle_maximize

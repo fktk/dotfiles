@@ -85,7 +85,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias obsidian='/snap/obsidian/current/obsidian'
+# alias obsidian='/snap/obsidian/current/obsidian --no-sandbox'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -104,6 +104,7 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR=nvim
+export LC_ALL="ja_JP.UTF-8"
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
@@ -113,7 +114,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.local/bin/env"
+export QMD_EMBED_MODEL="hf:Qwen/Qwen3-Embedding-0.6B-GGUF/Qwen3-Embedding-0.6B-Q8_0.gguf"
 
 eval "$(zoxide init bash --cmd j)"
 
@@ -125,6 +126,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+. "$HOME/.local/bin/env"
+
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
@@ -133,4 +136,3 @@ if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
 
-export QMD_EMBED_MODEL="hf:Qwen/Qwen3-Embedding-0.6B-GGUF/Qwen3-Embedding-0.6B-Q8_0.gguf"

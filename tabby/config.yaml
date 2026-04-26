@@ -11,20 +11,18 @@ groups:
     - name: Default
       pattern: .*
       theme:
-          bg: '#2ecc71'
-      fg: '#ffffff'
-      active_bg: '#2980b9'
-      active_fg: '#ffffff'
-      inactive_bg: ""
-      inactive_fg: ""
-      icon: ""
-      active_indicator_bg: ""
+          bg: '#000000'
+      fg: '#2d353b'
+      active_bg: '#7fbbb3'
+      active_fg: '#2d353b'
+      inactive_bg: "#3d484d"
+      inactive_fg: "#d3c6aa"
 sidebar:
     position: left
     mode: full
     header:
-        text: TABBY
-        height: 3
+        text: TK
+        height: 2
         padding_bottom: 1
         centered: null
         active_color: null
@@ -41,17 +39,17 @@ sidebar:
     line_height: 0
     action_zone: ""
     action_priority: 0
-    prefix_mode: false
+    prefix_mode: true
     theme: dark
     theme_mode: ""
     icon_style: ""
     colors:
-        bg: ""
+        bg: "#2d353b"
         header_fg: ""
-        active_fg: ""
-        inactive_fg: '#f2f2ee'
+        active_fg: "#d3c6aa"
+        inactive_fg: '#aaaaaa'
         pane_fg: ""
-        disclosure_fg: '#000000'
+        disclosure_fg: "#d699b6"
         disclosure_expanded: ⊟
         disclosure_collapsed: ⊞
         active_indicator: ◀
@@ -94,8 +92,8 @@ pane_header:
     handle_color: ""
     handle_icon: ""
     draggable: false
-    collapse_expanded_icon: ▾
-    collapse_collapsed_icon: ▸
+    # collapse_expanded_icon: ▾
+    # collapse_collapsed_icon: ▸
     # resize_grow_icon: '>'
     # resize_shrink_icon: <
     # resize_horizontal_grow_icon: '>'
@@ -123,7 +121,7 @@ indicators:
         icon: '-'
         color: '#3498db'
     busy:
-        enabled: true
+        enabled: false
         icon: ◐
         color: '#ff0000'
         frames:
@@ -256,51 +254,6 @@ widgets:
         padding_bottom: 0
         margin_top: 0
         margin_bottom: 0
-    stats:
-        enabled: true
-        style: minimal
-        show_cpu: true
-        show_memory: true
-        show_battery: false
-        bar_style: ""
-        bar_width: 0
-        update_interval: 0
-        position: ""
-        pin: false
-        priority: 0
-        fg: ""
-        bg: ""
-        cpu_fg: '#aaaaaa'
-        memory_fg: ""
-        battery_fg: ""
-        divider: ""
-        divider_fg: ""
-        padding_top: 0
-        padding_bottom: 0
-        margin_top: 0
-        margin_bottom: 0
-    claude:
-        enabled: false
-        style: ""
-        show_today: false
-        show_week: false
-        show_month: false
-        show_total: false
-        show_messages: false
-        db_path: ""
-        update_interval: 0
-        position: ""
-        pin: false
-        priority: 0
-        fg: ""
-        bg: ""
-        cost_fg: ""
-        divider: ""
-        divider_fg: ""
-        padding_top: 0
-        padding_bottom: 0
-        margin_top: 0
-        margin_bottom: 0
 busy_detection:
     extra_idle: []
     ai_tools:
@@ -322,3 +275,4 @@ auto_theme:
 ai:
     tab_summary:
         max_words: 3
+terminal_app: Ghostty
