@@ -20,3 +20,4 @@ nvim/lazy-lock.json
 
 # tmux plugins
 tmux/plugins/
+.worktrees/
