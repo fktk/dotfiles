@@ -66,6 +66,7 @@ for dir in "$DOTFILES_DIR"/*/; do
         rm "$target_dir"
     fi
 
+    echo "Creating directory: $target_dir"
     mkdir -p "$target_dir"
 
     # ディレクトリ内のファイルを再帰的に処理
@@ -84,6 +85,7 @@ for dir in "$DOTFILES_DIR"/*/; do
             continue
         fi
 
+        echo "Linking: $file -> $target"
         mkdir -p "$(dirname "$target")"
         ln -sfn "$file" "$target"
     done < <(find "$dir" -xtype f -print0)
@@ -105,6 +107,7 @@ for file in "$DOTFILES_DIR"/*; do
         continue
     fi
 
+    echo "Linking: $file -> $HOME/$base"
     ln -sfn "$file" "$HOME/$base"
 done
 
