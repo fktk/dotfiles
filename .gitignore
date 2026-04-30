@@ -21,3 +21,7 @@ nvim/lazy-lock.json
 # tmux plugins
 tmux/plugins/
 .worktrees/
+
+ghostty/auto/
+yazi/flavors/
+yazi/plugins/
