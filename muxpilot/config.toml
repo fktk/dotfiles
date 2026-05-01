@@ -1,0 +1,41 @@
+# muxpilot configuration example
+# Place this file at ~/.config/muxpilot/config.toml
+
+[app]
+# UI theme. Supported values include:
+#   "textual-dark", "textual-light", "nord", "gruvbox"
+theme = "textual-dark"
+
+[watcher]
+# Polling interval in seconds
+poll_interval = 2.0
+
+# Prompt patterns (regular expressions)
+# Specifying these completely REPLACES the default patterns.
+# Uncomment and customize as needed.
+
+# Default prompt patterns are:
+#   '[$>?]\\s*$'          - shell prompt (bash/zsh etc.)
+#   'In \\[\\d+\\]: '     - IPython / Jupyter
+#   '(?i)\\(y/n\\)'       - Yes/No prompt (case-insensitive)
+
+prompt_patterns = [
+  '[$>?]\\s*$',
+  'In \\[\\d+\\]: ',
+  '(?i)\\(y/n\\)',
+]
+
+# Error patterns (regular expressions)
+# Specifying these completely REPLACES the default patterns.
+
+# Default error patterns are:
+#   '(?i)Error|Exception|Traceback|FAILED|panic|Segmentation fault|FATAL'
+
+error_patterns = [
+  '(?i)Error|Exception|Traceback|FAILED|panic|Segmentation fault|FATAL',
+]
+
+[notifications]
+# Show toast notifications when tmux polling fails.
+# Set to false to suppress "tmux poll failed" messages during normal use.
+poll_errors = true
