@@ -83,6 +83,7 @@ fi
 alias l='ls -la'
 alias vi='nvim'
 alias vim='nvim'
+alias oc='opencode'
 alias ..='cd ..'
 alias ...='cd ../..'
 # alias obsidian='/snap/obsidian/current/obsidian --no-sandbox'

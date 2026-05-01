@@ -4,7 +4,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Worktree 内から実行された場合でもメインリポジトリを指すようにする
 if [ -d "$SCRIPT_DIR/.git" ] || [ -f "$SCRIPT_DIR/.git" ]; then
-    DOTFILES_DIR="$(git -C "$SCRIPT_DIR" rev-parse --git-common-dir | xargs dirname)"
+    git_common_dir="$(cd "$SCRIPT_DIR" && git rev-parse --git-common-dir)"
+    DOTFILES_DIR="$(cd "$SCRIPT_DIR" && cd "$git_common_dir" && cd .. && pwd)"
 else
     DOTFILES_DIR="$SCRIPT_DIR"
 fi
