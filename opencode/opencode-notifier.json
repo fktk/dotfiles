@@ -1,0 +1,71 @@
+{
+  "sound": false,
+  "notification": true,
+  "bell": true,
+  "timeout": 5,
+  "showProjectName": true,
+  "showSessionTitle": true,
+  "showIcon": true,
+  "customIconPath": null,
+  "suppressWhenFocused": false,
+  "enableOnDesktop": false,
+  "notificationSystem": "ghostty",
+  "linux": {
+    "grouping": false
+  },
+  "minDuration": 0,
+  "command": {
+    "enabled": false,
+    "path": "/path/to/command",
+    "args": ["--event", "{event}", "--message", "{message}"],
+    "minDuration": 0
+  },
+  "events": {
+    "permission": { "sound": true, "notification": true, "command": true, "bell": false },
+    "complete": { "sound": true, "notification": true, "command": true, "bell": false },
+    "subagent_complete": { "sound": false, "notification": false, "command": true, "bell": false },
+    "error": { "sound": true, "notification": true, "command": true, "bell": false },
+    "question": { "sound": true, "notification": true, "command": true, "bell": false },
+    "user_cancelled": { "sound": false, "notification": false, "command": true, "bell": false },
+    "plan_exit": { "sound": true, "notification": true, "command": true, "bell": false },
+    "session_started": { "sound": true, "notification": false, "command": true, "bell": false },
+    "user_message": { "sound": true, "notification": false, "command": true, "bell": false },
+    "client_connected": { "sound": true, "notification": false, "command": true, "bell": false }
+  },
+  "messages": {
+    "permission": "{timestamp} Session needs permission: {sessionTitle}",
+    "complete": "{timestamp} Session has finished: {sessionTitle}",
+    "subagent_complete": "{timestamp} Subagent task completed: {sessionTitle}",
+    "error": "{timestamp} Session encountered an error: {sessionTitle}",
+    "question": "{timestamp} Session has a question: {sessionTitle}",
+    "user_cancelled": "{timestamp} Session was cancelled by user: {sessionTitle}",
+    "plan_exit": "{timestamp} Plan ready for review: {sessionTitle}",
+    "session_started": "{timestamp} Session started: {sessionTitle}",
+    "user_message": "{timestamp} User sent a message: {sessionTitle}",
+    "client_connected": "{timestamp} OpenCode connected"
+  },
+  "sounds": {
+    "permission": null,
+    "complete": null,
+    "subagent_complete": null,
+    "error": null,
+    "question": null,
+    "user_cancelled": null,
+    "plan_exit": null,
+    "session_started": null,
+    "user_message": null,
+    "client_connected": null
+  },
+  "volumes": {
+    "permission": 1,
+    "complete": 1,
+    "subagent_complete": 1,
+    "error": 1,
+    "question": 1,
+    "user_cancelled": 1,
+    "plan_exit": 1,
+    "session_started": 1,
+    "user_message": 1,
+    "client_connected": 1
+  }
+}
