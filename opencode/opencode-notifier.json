@@ -9,7 +9,7 @@
   "customIconPath": null,
   "suppressWhenFocused": false,
   "enableOnDesktop": false,
-  "notificationSystem": "ghostty",
+  "notificationSystem": "node-notifier",
   "linux": {
     "grouping": false
   },

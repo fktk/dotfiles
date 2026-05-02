@@ -10,6 +10,9 @@ theme = "textual-dark"
 # Polling interval in seconds
 poll_interval = 2.0
 
+# Idle threshold in seconds before a pane is considered idle
+idle_threshold = 10.0
+
 # Prompt patterns (regular expressions)
 # Specifying these completely REPLACES the default patterns.
 # Uncomment and customize as needed.
@@ -34,6 +37,12 @@ prompt_patterns = [
 error_patterns = [
   '(?i)Error|Exception|Traceback|FAILED|panic|Segmentation fault|FATAL',
 ]
+
+[ui]
+# Detail panel width as a CSS fraction unit.
+# Larger values make the detail panel wider relative to the tree panel.
+# Default: "1fr" (tree:detail = 2:1)
+detail_panel_width = "3fr"
 
 [notifications]
 # Show toast notifications when tmux polling fails.
