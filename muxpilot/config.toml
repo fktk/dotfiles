@@ -4,28 +4,28 @@
 [app]
 # UI theme. Supported values include:
 #   "textual-dark", "textual-light", "nord", "gruvbox"
-theme = "textual-dark"
+theme = "monokai"
 
 [watcher]
 # Polling interval in seconds
 poll_interval = 2.0
 
 # Idle threshold in seconds before a pane is considered idle
-idle_threshold = 10.0
+idle_threshold = 5.0
 
 # Prompt patterns (regular expressions)
 # Specifying these completely REPLACES the default patterns.
 # Uncomment and customize as needed.
 
 # Default prompt patterns are:
-#   '[$>?]\\s*$'          - shell prompt (bash/zsh etc.)
-#   'In \\[\\d+\\]: '     - IPython / Jupyter
-#   '(?i)\\(y/n\\)'       - Yes/No prompt (case-insensitive)
+#   '[$>?]\s*$'          - shell prompt (bash/zsh etc.)
+#   'In \[\d+\]: '     - IPython / Jupyter
+#   '(?i)\(y/n\)'       - Yes/No prompt (case-insensitive)
 
 prompt_patterns = [
-  '[$>?]\\s*$',
-  'In \\[\\d+\\]: ',
-  '(?i)\\(y/n\\)',
+  # '[$>?]\s*$',
+  'In \[\d+\]: ',
+  '(?i)\(y/n\)',
 ]
 
 # Error patterns (regular expressions)
@@ -42,9 +42,25 @@ error_patterns = [
 # Detail panel width as a CSS fraction unit.
 # Larger values make the detail panel wider relative to the tree panel.
 # Default: "1fr" (tree:detail = 2:1)
-detail_panel_width = "3fr"
+tree_panel_max_width = 50
 
 [notifications]
 # Show toast notifications when tmux polling fails.
 # Set to false to suppress "tmux poll failed" messages during normal use.
 poll_errors = true
+
+# Cooldown period in seconds after a notification-triggered WAITING status.
+# During this period, content changes will not clear the override.
+# Default: 5.0
+notification_cooldown = 5.0
+
+# Regex pattern that triggers WAITING_INPUT status on a pane.
+# The notification message must contain both a pane id (e.g. %1) and
+# a match for this pattern. Leave empty to disable.
+waiting_trigger_pattern = "WAITING"
+
+[logging]
+# Log level for the muxpilot log file (~/.config/muxpilot/muxpilot.log).
+# Supported values: "DEBUG", "INFO", "WARNING", "ERROR"
+# Default: "INFO"
+level = "INFO"
