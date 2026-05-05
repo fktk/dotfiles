@@ -8,6 +8,16 @@ use = "imsi32/yatline"
 rev = "c5d4b48"
 hash = "e6e98d12b1648d1894c2b560d85eeaa7"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "ac82af3"
+hash = "77e20b071404f97c09d3f9afdb9482e0"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "ac82af3"
+hash = "fa268cb59989a87780605fdcfb8d99a9"
+
 [[flavor.deps]]
 use = "Chromium-3-Oxide/everforest-medium"
 rev = "4eede31"

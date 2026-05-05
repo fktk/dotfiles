@@ -39,10 +39,17 @@ error_patterns = [
 ]
 
 [ui]
-# Detail panel width as a CSS fraction unit.
-# Larger values make the detail panel wider relative to the tree panel.
-# Default: "1fr" (tree:detail = 2:1)
+# Tree panel maximum width in characters.
+# The tree panel will not grow wider than this value.
+# Default: 60
 tree_panel_max_width = 50
+
+# Sidebar hide threshold in characters.
+# When the terminal width is at or below this value, the detail panel (sidebar)
+# is automatically hidden to give more space to the tree panel.
+# Set to 0 to disable auto-hide.
+# Default: 80
+sidebar_hide_threshold = 50
 
 [notifications]
 # Show toast notifications when tmux polling fails.
