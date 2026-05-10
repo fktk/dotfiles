@@ -46,7 +46,88 @@ return {
       { "<leader>md", "<Plug>(md-render-demo)",        desc = "Markdown render demo" },
     },
   },
-  { "sindrets/diffview.nvim" },
+  {
+    "sindrets/diffview.nvim",
+    config = function()
+      require('diffview').setup()
+      vim.api.nvim_set_keymap('n', '<Leader>hd', '<cmd>DiffviewOpen HEAD~1<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<Leader>hf', '<cmd>DiffviewFileHistory %<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<Leader>hc', '<cmd>DiffviewClose<CR>', { noremap = true, silent = true })
+    end,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async", },
+    event = "BufReadPost",
+    init = function()
+      vim.o.foldcolumn = "1" -- 左端に折りたたみ状態を示すカラムを表示（不要なら "0"）
+      vim.o.foldlevel = 99   -- ufoには大きな値が必要
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+    end,
+    keys = {
+      {
+        "zR",
+        function() require("ufo").openAllFolds() end,
+        desc = "すべての折りたたみを開く (ufo)",
+      },
+      {
+        "zM",
+        function() require("ufo").closeAllFolds() end,
+        desc = "すべての折りたたみを閉じる (ufo)",
+      },
+      {
+        "K",
+        function()
+          -- カーソル下の折りたたみをプレビュー。折りたたみがなければLSPのHoverを表示
+          local winid = require("ufo").peekFoldedLinesUnderCursor()
+          if not winid then
+            vim.lsp.buf.hover()
+          end
+        end,
+        desc = "折りたたみのプレビュー / LSPホバー",
+      },
+    },
+    opts = {
+      -- 折りたたみプロバイダーの設定
+      -- 基本的に Treesitter を優先し、ダメなら indent を使うのがおすすめです
+      provider_selector = function(bufnr, filetype, buftype)
+        return { "treesitter", "indent" }
+      end,
+      -- プレビューウィンドウの設定
+      preview = {
+        win_config = {
+          border = { "", "─", "", "", "", "─", "", "" },
+          winhighlight = "Normal:Folded",
+          winblend = 0,
+        },
+        mappings = {
+          scrollU = "<C-u>",
+          scrollD = "<C-d>",
+          jumpTop = "[",
+          jumpBot = "]",
+        },
+      },
+    },
+  },
+  {
+    "bassamsdata/namu.nvim",
+    opts = {
+      global = { },
+      namu_symbols = { -- Specific Module options
+        options = {},
+      },
+    },
+    -- === Suggested Keymaps: ===
+    vim.keymap.set("n", "<leader>ss", ":Namu symbols<cr>", {
+      desc = "Jump to LSP symbol",
+      silent = true,
+    }),
+    vim.keymap.set("n", "<leader>sw", ":Namu workspace<cr>", {
+      desc = "LSP Symbols - Workspace",
+      silent = true,
+    })
+  },
   { "djoshea/vim-autoread" },
   {
     "kevinhwang91/nvim-hlslens",
@@ -83,13 +164,13 @@ return {
       })
     end,
   },
-  -- {
-  --   'nvim-treesitter/nvim-treesitter-context',
-  --   config = function()
-  --     require('treesitter-context').setup({
-  --     })
-  --   end,
-  -- },
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    config = function()
+      require('treesitter-context').setup({
+      })
+    end,
+  },
   {
     'petertriho/nvim-scrollbar',
     config = function()
@@ -249,12 +330,6 @@ return {
   -- },
   {
     'saghen/blink.cmp',
-    -- optional: provides snippets for the snippet source
-    dependencies = {
-      'rafamadriz/friendly-snippets',
-      'Kaiser-Yang/blink-cmp-avante',
-    },
-
     -- use a release tag to download pre-built binaries
     version = '1.*',
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -293,16 +368,7 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'avante' },
-        providers = {
-          avante = {
-            module = 'blink-cmp-avante',
-            name = 'Avante',
-            opts = {
-
-            }
-          }
-        }
+        default = { 'lsp', 'path', 'buffer' },
       },
       signature = { enabled = true },
 

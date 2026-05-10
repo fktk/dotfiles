@@ -5,9 +5,6 @@ vim.api.nvim_set_keymap('n', '<Esc><Esc>', ':nohl<CR>', opts)
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
 
-vim.api.nvim_set_keymap('n', '<Leader>hd', '<cmd>DiffviewOpen HEAD~1<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>hf', '<cmd>DiffviewFileHistory %<CR>', { noremap = true, silent = true })
-
 -- LSPサーバアタッチ時の処理
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ctx)
