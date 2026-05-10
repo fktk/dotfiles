@@ -9,3 +9,8 @@ show_symlink = true
 
 [preview]
 image_delay = 30
+
+plugin.prepend_previewers = [
+  { url = '*.sqlite3', run = 'preview-sqlite' },
+  { mime = 'application/sqlite3', run = 'preview-sqlite' },
+]
