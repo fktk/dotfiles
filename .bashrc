@@ -130,10 +130,11 @@ function y() {
 . "$HOME/.local/bin/env"
 
 if [ -f ~/.bash_secrets ]; then
-    . ~/.bash_secrets
+    . ~/.bash_ubuntu
 fi
 
 if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
 
+. "$HOME/.cargo/env"

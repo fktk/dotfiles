@@ -4,7 +4,7 @@
 [app]
 # UI theme. Supported values include:
 #   "textual-dark", "textual-light", "nord", "gruvbox"
-theme = "monokai"
+theme = "ansi-dark"
 
 [watcher]
 # Polling interval in seconds

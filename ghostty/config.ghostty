@@ -32,3 +32,4 @@ keybind = ctrl+]=text:\x1d
 keybind = ctrl+m=text:\x0d
 
 keybind = ctrl+shift+m=toggle_maximize
+command = tmux new-session -A -s main
