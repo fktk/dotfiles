@@ -128,6 +128,8 @@ function y() {
 }
 
 . "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
+export LS_COLORS="$LS_COLORS:ow=01;34:"
 
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_ubuntu
@@ -136,5 +138,3 @@ fi
 if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
-
-. "$HOME/.cargo/env"
