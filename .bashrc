@@ -84,8 +84,8 @@ alias l='ls -la'
 alias vi='nvim'
 alias vim='nvim'
 alias oc='opencode'
-alias ..='cd ..'
-alias ...='cd ../..'
+alias ..='j ..'
+alias ...='j ../..'
 # alias obsidian='/snap/obsidian/current/obsidian --no-sandbox'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -138,3 +138,7 @@ fi
 if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/tk/.local/bin:$PATH"
