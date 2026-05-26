@@ -2,3 +2,4 @@ gui:
   language: 'ja'
 os:
   edit: "nvim -- {{filename}}"
+  editPreset: "nvim"
