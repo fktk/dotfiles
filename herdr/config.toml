@@ -1,0 +1,47 @@
+onboarding = false
+
+[experimental]
+pane_history = false
+
+[terminal]
+new_cwd = "follow"
+
+[keys]
+prefix = "alt+a"
+copy_mode = "alt+v"
+resize_mode = "alt+r"
+detach = "alt+q"
+zoom = "alt+z"
+
+new_tab = "alt+c"
+next_tab = "alt+n"
+previous_tab = "alt+p"
+
+split_horizontal = "alt+;"
+split_vertical = "alt+/"
+
+focus_pane_left = "alt+h"
+focus_pane_right = "alt+l"
+focus_pane_up = "alt+k"
+focus_pane_down = "alt+j"
+swap_pane_left = "alt+left"
+swap_pane_right = "alt+right"
+swap_pane_up = "alt+up"
+swap_pane_down = "alt+down"
+close_pane = "alt+x"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[ui.toast]
+delivery = "herdr"
+
+[[keys.command]]
+key = "alt+g"
+type = "pane"
+command = "lazygit"
+description = "run lazygit"
