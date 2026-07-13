@@ -17,6 +17,7 @@ toggle_sidebar = "alt+b"
 new_tab = "alt+c"
 next_tab = "alt+n"
 previous_tab = "alt+p"
+rename_tab = "prefix+t"
 
 split_horizontal = "alt+;"
 split_vertical = "alt+/"

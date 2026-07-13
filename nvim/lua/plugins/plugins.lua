@@ -47,15 +47,6 @@ return {
     },
   },
   {
-    "sindrets/diffview.nvim",
-    config = function()
-      require('diffview').setup()
-      vim.api.nvim_set_keymap('n', '<Leader>hd', '<cmd>DiffviewOpen HEAD~1<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<Leader>hf', '<cmd>DiffviewFileHistory %<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<Leader>hc', '<cmd>DiffviewClose<CR>', { noremap = true, silent = true })
-    end,
-  },
-  {
     "kevinhwang91/nvim-ufo",
     dependencies = { "kevinhwang91/promise-async", },
     event = "BufReadPost",

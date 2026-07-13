@@ -1,0 +1,5 @@
+theme = "everforest-dark"
+mode = "auto"
+watch = true
+menu_bar = false
+transparent_background = false
