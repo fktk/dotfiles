@@ -12,6 +12,7 @@ copy_mode = "alt+v"
 resize_mode = "alt+r"
 detach = "alt+q"
 zoom = "alt+z"
+toggle_sidebar = "alt+b"
 
 new_tab = "alt+c"
 next_tab = "alt+n"
@@ -30,11 +31,15 @@ swap_pane_up = "alt+up"
 swap_pane_down = "alt+down"
 close_pane = "alt+x"
 
+next_agent = "alt+shift+n"
+previous_agent = "alt+shift+p"
+
 [ui]
 show_agent_labels_on_pane_borders = true
+prompt_new_tab_name = false
 
 [theme]
-name = "terminal"
+name = "vesper"
 auto_switch = false
 
 [ui.toast]
