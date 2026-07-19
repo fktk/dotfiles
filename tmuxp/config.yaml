@@ -1,8 +1,0 @@
-session_name: config
-start_directory: ~/.dotfiles
-windows:
-  - window_name: config
-    layout: main-vertical
-    panes:
-      - yazi
-      - gemini

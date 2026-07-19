@@ -84,6 +84,7 @@ alias l='ls -la'
 alias vi='nvim'
 alias vim='nvim'
 alias oc='opencode'
+alias co='copilot'
 alias ..='j ..'
 alias ...='j ../..'
 # alias obsidian='/snap/obsidian/current/obsidian --no-sandbox'
@@ -115,8 +116,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export QMD_EMBED_MODEL="hf:Qwen/Qwen3-Embedding-0.6B-GGUF/Qwen3-Embedding-0.6B-Q8_0.gguf"
-
 eval "$(zoxide init bash --cmd j)"
 
 function y() {
@@ -131,7 +130,7 @@ function y() {
 . "$HOME/.cargo/env"
 export LS_COLORS="$LS_COLORS:ow=01;34:"
 
-if [ -f ~/.bash_secrets ]; then
+if [ -f ~/.bash_ubuntu ]; then
     . ~/.bash_ubuntu
 fi
 
