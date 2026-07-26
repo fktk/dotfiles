@@ -48,6 +48,8 @@ delivery = "herdr"
 
 [[keys.command]]
 key = "alt+g"
-type = "pane"
+type = "popup"
 command = "lazygit"
 description = "run lazygit"
+width="90%"
+height="90%"
