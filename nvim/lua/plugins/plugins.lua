@@ -34,74 +34,6 @@ return {
     },
   },
   {
-    "delphinus/md-render.nvim",
-    version = "*",
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons", version = "*" }, -- optional: file type icons in code blocks
-      { "delphinus/budoux.lua", version = "*" }, -- optional: CJK phrase-level line breaking
-    },
-    keys = {
-      { "<leader>mp", "<Plug>(md-render-preview)",     desc = "Markdown preview (toggle)" },
-      { "<leader>mt", "<Plug>(md-render-preview-tab)", desc = "Markdown preview in tab (toggle)" },
-      { "<leader>md", "<Plug>(md-render-demo)",        desc = "Markdown render demo" },
-    },
-  },
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = { "kevinhwang91/promise-async", },
-    event = "BufReadPost",
-    init = function()
-      vim.o.foldcolumn = "1" -- 左端に折りたたみ状態を示すカラムを表示（不要なら "0"）
-      vim.o.foldlevel = 99   -- ufoには大きな値が必要
-      vim.o.foldlevelstart = 99
-      vim.o.foldenable = true
-    end,
-    keys = {
-      {
-        "zR",
-        function() require("ufo").openAllFolds() end,
-        desc = "すべての折りたたみを開く (ufo)",
-      },
-      {
-        "zM",
-        function() require("ufo").closeAllFolds() end,
-        desc = "すべての折りたたみを閉じる (ufo)",
-      },
-      {
-        "K",
-        function()
-          -- カーソル下の折りたたみをプレビュー。折りたたみがなければLSPのHoverを表示
-          local winid = require("ufo").peekFoldedLinesUnderCursor()
-          if not winid then
-            vim.lsp.buf.hover()
-          end
-        end,
-        desc = "折りたたみのプレビュー / LSPホバー",
-      },
-    },
-    opts = {
-      -- 折りたたみプロバイダーの設定
-      -- 基本的に Treesitter を優先し、ダメなら indent を使うのがおすすめです
-      provider_selector = function(bufnr, filetype, buftype)
-        return { "treesitter", "indent" }
-      end,
-      -- プレビューウィンドウの設定
-      preview = {
-        win_config = {
-          border = { "", "─", "", "", "", "─", "", "" },
-          winhighlight = "Normal:Folded",
-          winblend = 0,
-        },
-        mappings = {
-          scrollU = "<C-u>",
-          scrollD = "<C-d>",
-          jumpTop = "[",
-          jumpBot = "]",
-        },
-      },
-    },
-  },
-  {
     "bassamsdata/namu.nvim",
     opts = {
       global = { },
@@ -110,11 +42,11 @@ return {
       },
     },
     -- === Suggested Keymaps: ===
-    vim.keymap.set("n", "<leader>ss", ":Namu symbols<cr>", {
+    vim.keymap.set("n", "<leader>ns", ":Namu symbols<cr>", {
       desc = "Jump to LSP symbol",
       silent = true,
     }),
-    vim.keymap.set("n", "<leader>sw", ":Namu workspace<cr>", {
+    vim.keymap.set("n", "<leader>nw", ":Namu workspace<cr>", {
       desc = "LSP Symbols - Workspace",
       silent = true,
     })
