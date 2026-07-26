@@ -186,3 +186,5 @@ sysmon() {
 
 # Added by Antigravity CLI installer
 export PATH="/home/tk/.local/bin:$PATH"
+
+export MCAT_THEME=everforest

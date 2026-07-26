@@ -1,7 +1,7 @@
 onboarding = false
 
 [experimental]
-pane_history = false
+pane_history = true
 
 [terminal]
 new_cwd = "follow"
@@ -12,7 +12,12 @@ copy_mode = "alt+v"
 resize_mode = "alt+r"
 detach = "alt+q"
 zoom = "alt+z"
-toggle_sidebar = "alt+b"
+toggle_sidebar = "alt+s"
+
+next_workspace = "prefix+n"
+previous_workspace = "prefix+p"
+open_worktree = "prefix+o"
+remove_worktree = "prefix+x"
 
 new_tab = "alt+c"
 next_tab = "alt+n"
@@ -35,16 +40,25 @@ close_pane = "alt+x"
 next_agent = "alt+shift+n"
 previous_agent = "alt+shift+p"
 
-[ui]
-show_agent_labels_on_pane_borders = true
-prompt_new_tab_name = false
-
 [theme]
 name = "vesper"
 auto_switch = false
 
+[ui]
+show_agent_labels_on_pane_borders = true
+prompt_new_tab_name = false
+mouse_capture = true
+
+[ui.sidebar.agents]
+row_gap = 1
+
 [ui.toast]
 delivery = "herdr"
+delay_seconds = 1
+
+[ui.toast.herdr]
+position = "bottom-left"
+
 
 [[keys.command]]
 key = "alt+g"
@@ -53,3 +67,27 @@ command = "lazygit"
 description = "run lazygit"
 width="90%"
 height="90%"
+
+[[keys.command]]
+key = "alt+b"
+type = "popup"
+command = "btop"
+description = "run btop"
+width="90%"
+height="90%"
+
+[[keys.command]]
+key = "alt+d"
+type = "popup"
+command = "hunk diff"
+description = "run hunk diff"
+width="90%"
+height="90%"
+
+[[keys.command]]
+key = "alt+f"
+type = "popup"
+command = "exec \"${SHELL:-sh}\""
+description = "open scratch terminal"
+width = "90%"
+height = "90%"
