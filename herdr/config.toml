@@ -16,7 +16,7 @@ toggle_sidebar = "alt+s"
 
 next_workspace = "prefix+n"
 previous_workspace = "prefix+p"
-open_worktree = "prefix+o"
+new_worktree = "prefix+a"
 remove_worktree = "prefix+x"
 
 new_tab = "alt+c"
@@ -36,6 +36,7 @@ swap_pane_right = "alt+right"
 swap_pane_up = "alt+up"
 swap_pane_down = "alt+down"
 close_pane = "alt+x"
+rename_pane = "prefix+p"
 
 next_agent = "alt+shift+n"
 previous_agent = "alt+shift+p"

@@ -8,12 +8,13 @@ end
 
 return {
   settings = {
-    python = {
-      pythonPath = config_path,
-      analysis = {
-        ignore = { '*' },
-      },
-    },
+    -- 仮想環境パスは pyrightconfig.jsonで管理
+    -- python = {
+    --   pythonPath = config_path,
+    --   analysis = {
+    --     ignore = { '*' },
+    --   },
+    -- },
     pyright = {
       disableOrganizeImports = true,
     },
