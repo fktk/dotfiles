@@ -3,3 +3,7 @@ gui:
 os:
   edit: "nvim -- {{filename}}"
   editPreset: "nvim"
+
+git:
+  diffRenderers:
+    - command: delta --dark --paging=never

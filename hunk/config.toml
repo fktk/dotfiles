@@ -1,8 +1,0 @@
-theme = "everforest-dark"
-mode = "auto"
-watch = true
-menu_bar = false
-transparent_background = false
-exclude_untracked = true
-wrap_lines = false
-agent_notes = true
