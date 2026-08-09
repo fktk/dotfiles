@@ -6,4 +6,13 @@ os:
 
 git:
   diffRenderers:
-    - command: delta --dark --paging=never
+    - command: >-
+        delta
+        --dark
+        --paging=never
+        --side-by-side
+        --hyperlinks
+        --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+        --syntax-theme=zenburn
+    - type: rawGit
+      name: default

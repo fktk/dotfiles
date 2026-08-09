@@ -188,3 +188,4 @@ sysmon() {
 export PATH="/home/tk/.local/bin:$PATH"
 
 export MCAT_THEME=everforest
+export PATH="~/go/bin:$PATH"
