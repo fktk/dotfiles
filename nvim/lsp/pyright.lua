@@ -9,6 +9,7 @@ end
 return {
   settings = {
     -- 仮想環境パスは pyrightconfig.jsonで管理
+    -- pyrightconfig.jsonはllmに書いてもらう
     -- python = {
     --   pythonPath = config_path,
     --   analysis = {
