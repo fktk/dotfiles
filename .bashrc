@@ -93,7 +93,6 @@ alias ...='j ../..'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -104,13 +103,6 @@ if ! shopt -oq posix; then
 	. /etc/bash_completion
     fi
 fi
-
-export EDITOR=nvim
-export LC_ALL="ja_JP.UTF-8"
-
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH="$PATH:/usr/local/cuda/bin"
-export PATH="$PATH:$HOME/.npm-packages/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -126,10 +118,6 @@ function y() {
     rm -f -- "$tmp"
 }
 
-. "$HOME/.local/bin/env"
-. "$HOME/.cargo/env"
-export LS_COLORS="$LS_COLORS:ow=01;34:"
-
 if [ -f ~/.bash_ubuntu ]; then
     . ~/.bash_ubuntu
 fi
@@ -138,54 +126,17 @@ if [ -f ~/.bash_wsl ]; then
     . ~/.bash_wsl
 fi
 
-# ==========================================
-# 1行ステータスモニター (sysmon)
-# ==========================================
-_sysmon_update() {
-    # ネットワークインターフェースの自動取得
-    local I=$(ip route | awk '/default/ {print $5}' | head -n1)
-    
-    # 現在のネットワーク転送量を取得
-    local R1=$(cat /sys/class/net/$I/statistics/rx_bytes 2>/dev/null || echo 0)
-    local T1=$(cat /sys/class/net/$I/statistics/tx_bytes 2>/dev/null || echo 0)
-
-    # CPU使用率（正確な値を取るため、ここで約1秒待機します）
-    local CPU=$(vmstat 1 2 | tail -1 | awk '{print 100-$15}')
-
-    # 1秒経過後のネットワーク転送量を取得
-    local R2=$(cat /sys/class/net/$I/statistics/rx_bytes 2>/dev/null || echo 0)
-    local T2=$(cat /sys/class/net/$I/statistics/tx_bytes 2>/dev/null || echo 0)
-
-    # GPU・メモリ・日時の取得
-    local GPU=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || echo 0)
-    local MEM=$(free -h | awk '/^Mem:/ {print $3"/"$2}' | sed 's/i//g')
-    local D=$(date +"%m-%d %H:%M")
-
-    # 1秒あたりの通信速度を計算 (KB/s)
-    local RX=$(((R2 - R1) / 1024))
-    local TX=$(((T2 - T1) / 1024))
-
-    # 出力（カラーコードとNerd Fontsアイコンを使用）
-    printf " ⇄ ⬇ %sK | ⬆ %sK  \033[34m\033[0m   %s%%  \033[34m\033[0m  󰢮 %s%%  \033[34m\033[0m   %s  \033[34m\033[0m   %s\n" \
-        "$RX" "$TX" "$CPU" "$GPU" "$MEM" "$D"
-}
-
-# watch は内部で /bin/sh (dash) を使うため、関数定義をそのまま渡すと
-# bash 構文エラーになる。そこで関数定義を含む実行用スクリプトを
-# 一時ファイルに書き出し、それを bash に実行させる。
-sysmon() {
-    local tmp="$(mktemp /tmp/sysmon.XXXXXX.sh)"
-    {
-        declare -f _sysmon_update
-        echo '_sysmon_update'
-    } > "$tmp"
-    watch -c -t -n 4 bash "$tmp"
-    rm -f "$tmp"
-}
-
+export EDITOR=nvim
+export MCAT_THEME=everforest
+export LS_COLORS="$LS_COLORS:ow=01;34:"
+export LC_ALL="ja_JP.UTF-8"
 
 # Added by Antigravity CLI installer
-export PATH="/home/tk/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/usr/local/cuda/bin"
+export PATH="$PATH:$HOME/.npm-packages/bin"
 
-export MCAT_THEME=everforest
-export PATH="~/go/bin:$PATH"
+. "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
