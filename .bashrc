@@ -110,22 +110,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init bash --cmd j)"
 
-function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    command yazi "$@" --cwd-file="$tmp"
-    IFS= read -r -d '' cwd < "$tmp"
-    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-    rm -f -- "$tmp"
-}
-
-if [ -f ~/.bash_ubuntu ]; then
-    . ~/.bash_ubuntu
-fi
-
-if [ -f ~/.bash_wsl ]; then
-    . ~/.bash_wsl
-fi
-
 export EDITOR=nvim
 export MCAT_THEME=everforest
 export LS_COLORS="$LS_COLORS:ow=01;34:"
@@ -134,9 +118,27 @@ export LC_ALL="ja_JP.UTF-8"
 # Added by Antigravity CLI installer
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
-export PATH="$PATH:$HOME/.npm-packages/bin"
 
-. "$HOME/.local/bin/env"
-. "$HOME/.cargo/env"
+for file in \
+    "$HOME/.local/bin/env" \
+    "$HOME/.cargo/env" \
+    "$HOME/.bash_ubuntu" \
+    "$HOME/.bash_wsl"
+do
+    [ -f "$file" ] && . "$file"
+done
+
+#######################
+### custom function ###
+#######################
+
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    command yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}
