@@ -32,3 +32,8 @@ keybind = ctrl+]=text:\x1d
 keybind = ctrl+m=text:\x0d
 
 keybind = ctrl+shift+m=toggle_maximize
+keybind = alt+shift+c=new_tab
+keybind = alt+shift+n=next_tab
+keybind = alt+shift+p=previous_tab
+keybind = alt+shift+p=previous_tab
+keybind = alt+shift+x=close_tab
