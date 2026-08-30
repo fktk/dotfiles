@@ -7,12 +7,10 @@ os:
 git:
   diffRenderers:
     - command: >-
-        delta
-        --dark
-        --paging=never
-        --side-by-side
-        --hyperlinks
-        --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-        --syntax-theme=zenburn
+        hunk pager
+        --mode split
+    - command: >-
+        hunk pager
+        --mode stack
     - type: rawGit
       name: default
