@@ -39,8 +39,7 @@ swap_pane_down = "alt+down"
 close_pane = "alt+x"
 rename_pane = "prefix+shift+p"
 
-next_agent = "alt+shift+n"
-previous_agent = "alt+shift+p"
+next_agent = "alt+ctrl+n"
 
 [theme]
 name = "vesper"
