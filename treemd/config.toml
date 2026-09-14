@@ -1,0 +1,13 @@
+[ui]
+theme = "OceanDark"                  # OceanDark, Nord, Dracula, Solarized, Monokai, Gruvbox, TokyoNight, CatppuccinMocha
+outline_width = 30              # 20, 30, or 40
+tree_style = "spaced"           # "spaced" (default) or "compact" (gapless box characters)
+outline_heading_markers = false  # Show #/##/### level markers in outline sidebar
+
+[terminal]
+color_mode = "auto"    # "auto", "rgb", or "256"
+
+[content]
+hide_frontmatter = false  # Hide YAML frontmatter (---\n...\n---) in content view
+hide_latex = false        # Hide LaTeX math expressions ($...$, $$...$$, \begin{...})
+code_fences = "full"     # "full", "label", or "none" (see below)
