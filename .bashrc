@@ -126,7 +126,9 @@ for file in \
     "$HOME/.local/bin/env" \
     "$HOME/.cargo/env" \
     "$HOME/.bash_ubuntu" \
-    "$HOME/.bash_wsl"
+    "$HOME/.bash_wsl" \
+    "/usr/share/doc/fzf/examples/key-bindings.bash" \
+    "/usr/share/doc/fzf/examples/completion.bash"
 do
     [ -f "$file" ] && . "$file"
 done
