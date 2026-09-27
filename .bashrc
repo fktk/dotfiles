@@ -85,9 +85,8 @@ alias vi='nvim'
 alias vim='nvim'
 alias oc='opencode'
 alias co='copilot'
-alias ..='j ..'
-alias ...='j ../..'
-# alias obsidian='/snap/obsidian/current/obsidian --no-sandbox'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -123,6 +122,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
 
 for file in \
+    "$HOME/.local/share/blesh/ble.sh" \
     "$HOME/.local/bin/env" \
     "$HOME/.cargo/env" \
     "$HOME/.bash_ubuntu" \
