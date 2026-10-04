@@ -3,6 +3,8 @@ set -o vi
 ble-import integration/fzf-completion
 ble-import integration/fzf-key-bindings
 
+bleopt color_scheme=dracula
+
 function blerc/kyemap-vi-load-hook {
     bleopt keymap_vi_mode_show=
 
