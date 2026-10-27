@@ -16,9 +16,6 @@ return {
     event = "BufReadPre",
     opts = {
       filetypes = {"*"},
-      usr_default_options = {
-        mode = "background",
-      },
     }
   },
   {
