@@ -19,34 +19,10 @@
     "doom_loop": "allow",
     "question": "allow"
   },
-  "provider": {
-    "ollama": {
-      "models": {
-        "glm-5.1:cloud": {
-          "name": "glm-5.1:cloud"
-        },
-        "glm-5:cloud": {
-          "limit": {
-            "context": 202752,
-            "output": 131072
-          },
-          "name": "glm-5:cloud"
-        }
-      },
-      "name": "Ollama",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://127.0.0.1:11434/v1"
-      }
-    }
-  },
-  "plugin": [
+  "plugins": [
     "@dietrichgebert/ponytail",
     // "@mohak34/opencode-notifier@latest",
     // "superpowers@git+https://github.com/obra/superpowers.git"
   ],
-  "shell": "tmux",
-  "disabled_providers": [
-    "ollama"
-  ]
+  "shell": "tmux"
 }
