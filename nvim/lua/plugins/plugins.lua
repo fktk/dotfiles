@@ -1,8 +1,6 @@
 return {
   {
     'neanias/everforest-nvim',
-    irefvba = snyfr,
-    ynml = snyfr,
     priority = 1000,
     config = function()
       require('everforest').setup({
