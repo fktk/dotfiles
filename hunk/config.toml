@@ -15,5 +15,4 @@ agent_notes = false
 transparent_background = false
 
 [pager]
-menu_ber = false
 wrap_lines = true
