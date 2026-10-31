@@ -1,5 +1,3 @@
-set -o vi
-
 ble-import integration/fzf-completion
 ble-import integration/fzf-key-bindings
 
