@@ -15,15 +15,14 @@ detach = "alt+q"
 zoom = "alt+z"
 toggle_sidebar = "alt+s"
 
-next_workspace = "prefix+n"
-previous_workspace = "prefix+p"
-new_worktree = "prefix+a"
-remove_worktree = "prefix+x"
+previous_workspace = "ctrl+up"
+next_workspace = "ctrl+down"
+rename_workspace = "F3"
 
 new_tab = "alt+c"
 next_tab = "alt+n"
 previous_tab = "alt+p"
-rename_tab = "prefix+shift+t"
+rename_tab = "F2"
 
 split_horizontal = "alt+;"
 split_vertical = "alt+/"
@@ -37,9 +36,9 @@ swap_pane_right = "alt+right"
 swap_pane_up = "alt+up"
 swap_pane_down = "alt+down"
 close_pane = "alt+x"
-rename_pane = "prefix+shift+p"
 
-next_agent = "alt+ctrl+n"
+previous_agent = "alt+ctrl+up"
+next_agent = "alt+ctrl+down"
 
 [theme]
 name = "vesper"
