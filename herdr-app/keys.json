@@ -34,8 +34,8 @@
     "ctrl-up": "space.prev",
     "ctrl-down": "space.next",
 
-    "ctrl-alt-up": "agent.prev",
-    "ctrl-alt-down": "agent.next",
+    "alt-shift-k": "agent.prev",
+    "alt-shift-j": "agent.next",
 
     "f2": "tab.rename",
     "f3": "space.rename"

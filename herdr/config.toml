@@ -37,8 +37,8 @@ swap_pane_up = "alt+up"
 swap_pane_down = "alt+down"
 close_pane = "alt+x"
 
-previous_agent = "alt+ctrl+up"
-next_agent = "alt+ctrl+down"
+previous_agent = "alt+shift+k"
+next_agent = "alt+shift+j"
 
 [theme]
 name = "vesper"
