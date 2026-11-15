@@ -152,3 +152,5 @@ function y() {
     [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
     rm -f -- "$tmp"
 }
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi

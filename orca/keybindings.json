@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "keybindings": {},
+  "platforms": {
+    "darwin": {},
+    "linux": {
+      "tab.newTerminal": [
+        "Mod+T",
+        "Alt+C"
+      ],
+      "sidebar.left.toggle": [
+        "Mod+B",
+        "Alt+S"
+      ],
+      "tab.nextSameType": [
+        "Mod+Alt+BracketRight"
+      ],
+      "tab.previousSameType": [
+        "Mod+Alt+BracketLeft"
+      ],
+      "tab.nextAllTypes": [
+        "Mod+Shift+BracketRight",
+        "Alt+N"
+      ],
+      "tab.previousAllTypes": [
+        "Mod+Shift+BracketLeft",
+        "Alt+P"
+      ],
+      "terminal.closePane": [
+        "Mod+W",
+        "Alt+X"
+      ],
+      "terminal.focusNextPane": [
+        "Mod+BracketRight",
+        "Alt+L"
+      ],
+      "terminal.focusPreviousPane": [
+        "Mod+BracketLeft",
+        "Alt+H"
+      ],
+      "worktree.navigateUp": [
+        "Mod+Shift+ArrowUp",
+        "Mod+ArrowUp"
+      ],
+      "worktree.navigateDown": [
+        "Mod+Shift+ArrowDown",
+        "Mod+ArrowDown"
+      ],
+      "terminal.splitRight": [
+        "Mod+Shift+D",
+        "Alt+Slash"
+      ],
+      "terminal.splitDown": [
+        "Alt+Shift+D",
+        "Alt+Semicolon"
+      ]
+    },
+    "win32": {}
+  },
+  "migrations": {
+    "legacySettings": "done"
+  }
+}
