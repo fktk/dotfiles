@@ -53,6 +53,10 @@
       "terminal.splitDown": [
         "Alt+Shift+D",
         "Alt+Semicolon"
+      ],
+      "terminal.expandPane": [
+        "Mod+Shift+Enter",
+        "Alt+Z"
       ]
     },
     "win32": {}

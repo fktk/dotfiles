@@ -60,7 +60,11 @@ for dir in "$DOTFILES_DIR"/*/; do
         .git|.worktrees|docs) continue ;;
     esac
 
-    target_dir="$CONFIG_DIR/$base"
+    # 配置先（既定は ~/.config/<name>、一部はホーム直下のドットディレクトリ）
+    case "$base" in
+        orca) target_dir="$HOME/.orca" ;;
+        *)    target_dir="$CONFIG_DIR/$base" ;;
+    esac
 
     # 旧方式のディレクトリ単位シンボリックリンクが残っていれば削除
     if [ -L "$target_dir" ]; then
