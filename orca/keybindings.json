@@ -27,7 +27,6 @@
         "Alt+P"
       ],
       "terminal.closePane": [
-        "Mod+W",
         "Alt+X"
       ],
       "terminal.focusNextPane": [
@@ -57,9 +56,99 @@
       "terminal.expandPane": [
         "Mod+Shift+Enter",
         "Alt+Z"
+      ],
+      "floatingTerminal.toggle": [
+        "Mod+Alt+A",
+        "Alt+F"
+      ],
+      "tab.newAgent": [
+        "Alt+A"
+      ],
+      "tab.close": [],
+      "voice.dictation": [
+        "Mod+E",
+        "Alt+E"
+      ],
+      "workspace.create": [
+        "Mod+Shift+N"
+      ],
+      "floatingWorkspace.maximize": [
+        "Mod+Enter"
       ]
     },
-    "win32": {}
+    "win32": {
+      "tab.newTerminal": [
+        "Mod+T",
+        "Alt+C"
+      ],
+      "sidebar.left.toggle": [
+        "Mod+B",
+        "Alt+S"
+      ],
+      "tab.nextSameType": [
+        "Mod+Alt+BracketRight"
+      ],
+      "tab.previousSameType": [
+        "Mod+Alt+BracketLeft"
+      ],
+      "tab.nextAllTypes": [
+        "Mod+Shift+BracketRight",
+        "Alt+N"
+      ],
+      "tab.previousAllTypes": [
+        "Mod+Shift+BracketLeft",
+        "Alt+P"
+      ],
+      "terminal.closePane": [
+        "Alt+X"
+      ],
+      "terminal.focusNextPane": [
+        "Mod+BracketRight",
+        "Alt+L"
+      ],
+      "terminal.focusPreviousPane": [
+        "Mod+BracketLeft",
+        "Alt+H"
+      ],
+      "worktree.navigateUp": [
+        "Mod+Shift+ArrowUp",
+        "Mod+ArrowUp"
+      ],
+      "worktree.navigateDown": [
+        "Mod+Shift+ArrowDown",
+        "Mod+ArrowDown"
+      ],
+      "terminal.splitRight": [
+        "Mod+Shift+D",
+        "Alt+Slash"
+      ],
+      "terminal.splitDown": [
+        "Alt+Shift+D",
+        "Alt+Semicolon"
+      ],
+      "terminal.expandPane": [
+        "Mod+Shift+Enter",
+        "Alt+Z"
+      ],
+      "floatingTerminal.toggle": [
+        "Mod+Alt+A",
+        "Alt+F"
+      ],
+      "tab.newAgent": [
+        "Alt+A"
+      ],
+      "tab.close": [],
+      "voice.dictation": [
+        "Mod+E",
+        "Alt+E"
+      ],
+      "workspace.create": [
+        "Mod+Shift+N"
+      ],
+      "floatingWorkspace.maximize": [
+        "Mod+Enter"
+      ]
+    }
   },
   "migrations": {
     "legacySettings": "done"
